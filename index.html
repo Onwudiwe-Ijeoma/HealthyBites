@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,viewport-fit=cover">
+    <meta name="author" content="onwudiwe ijeoma">
+    <meta name="keywords" content="freelancer, webdesigner,healthy foods, rwd, responsive web design, adaptive design,
+    moblie design">
+    <meta name="description" content="this is a banner design for a healthy food website">
+    <title>Healthy Bites|Organic Foods</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header id="navbar">
+            <a href="#" class="logo">Healthy<span>Bites</span></a>
+            <span class="menuIcon" onclick="menuToggle()"></span>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+            <!--small screen menu icon and cancel icon-->
+
+        </header>
+
+        <div class="content">
+            <div class="bannerText" id="slideshowText">
+                <!--slideshow text id for js-->
+                <div class="active">
+                    <h2> EAT Healthy<br> stay Healthy</h2>
+                    <p>Experience nutrient-rich organic cuisine that provides you nourishment to stay healthy,
+                        eat your best with variety of dishes from our menu that cuts accross different continents.
+
+                    </p>
+                    <a href="#">Read More</a>
+                </div>
+
+
+                <div>
+                    <h2> EAT Your<br> veggies</h2>
+                    <p>We provide fresh, delicious and natual healthy fruits and vegetables to promote healthy
+                        living among our consumers,nourish your body with the best healthy veggies from our farms.
+                    </p>
+                    <a href="#">Read More</a>
+                </div>
+
+                <div>
+                    <h2> Good Food<br> Good Mood</h2>
+                    <p>Thrill your taste buds with tasty meals when you walk into our outlets to savour our filling
+                        healthy food
+                        experience, we serve you clean and fresh healthy meals.
+                    </p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+
+
+            <div class="bannerImg" id="slideshow">
+                <img src="FOOD PICTURE 2.png" class="active" width="300px" alt="food picture">
+                <img src="pexels-markus-winkler-4.png" width="300px" alt="food picture">
+                <img src="pexels-anthony-leong-2.png" width="300px" alt="food picture">
+            </div>
+        </div>
+
+        <div class="icons">
+            <ul class="sm">
+                <li><a href="#"><img src="iconmonstr-facebook-6-120.png" width="25px" alt="facebook logo"></a></li>
+                <li><a href="#"><img src="iconmonstr-instagram-13-240.png" width="25px" alt="instagram logo"></a></li>
+                <li><a href="#"><img src="iconmonstr-twitter-3-240.png" width="25px" alt="twitter logo"></a></li>
+
+
+            </ul>
+            <ul class="controls">
+                <li><a><img src="left-arrow (1).png" width="25px" onclick="prevSlide(); nextSlideText()"></a></li>
+                <li><a><img src="right arrow (1).png" width="25px" onclick="nextSlide(); prevSlideText()"></a></li>
+
+
+            </ul>
+
+        </div>
+    </div>
+    <script type="text/javascript">
+        var slideshow = document.getElementById('slideshow');
+        var slides = slideshow.getElementsByTagName('img');
+        var index = 0;
+
+        function nextSlide() {
+            slides[index].classList.remove('active');
+            index = (index + 1) % slides.length;
+            slides[index].classList.add('active');
+
+        }
+
+        function prevSlide() {
+            slides[index].classList.remove('active');
+            index = (index - 1 + slides.length) % slides.length;
+            slides[index].classList.add('active');
+        }
+
+        //---------------------------------------this is the slideshow text section
+        var slideshowText = document.getElementById('slideshowText');
+        var slidesText = slideshowText.getElementsByTagName('div');
+        var i = 0;
+
+        function nextSlideText() {
+            slidesText[i].classList.remove('active');
+            i = (i + 1) % slidesText.length;
+            slidesText[i].classList.add('active');
+
+        }
+
+        function prevSlideText() {
+            slidesText[i].classList.remove('active');
+            i = (i - 1 + slidesText.length) % slidesText.length;
+            slidesText[i].classList.add('active');
+        }
+
+        function menuToggle() {
+            var nav = document.getElementById('navbar');
+            nav.classList.toggle('active');
+            var nav = document.getElementsById('menuIcon');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
